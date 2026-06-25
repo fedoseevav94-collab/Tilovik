@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+:root {
+  --khaki: #3f4a2f;
+  --khaki-dark: #26311f;
+  --olive: #5f6f3a;
+  --sand: #e7ddc4;
+  --warm-bg: #f7f4eb;
+  --text: #1e1e1e;
+  --muted: #6b6b6b;
+  --gold: #c8a96a;
+  --danger: #b42318;
+  --success: #267a3e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--warm-bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.container {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 3px rgba(200, 169, 106, 0.45);
+}
+
+.section {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: 6rem;
+  }
+}
+
+.card-hover {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(38, 49, 31, 0.12);
+  border-color: rgba(200, 169, 106, 0.45);
+}
+
+.prose-ru h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.55rem, 2.5vw, 2.3rem);
+  line-height: 1.18;
+  font-weight: 760;
+  color: var(--khaki-dark);
+}
+
+.prose-ru h3 {
+  margin-top: 1.7rem;
+  margin-bottom: 0.55rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 720;
+  color: var(--khaki);
+}
+
+.prose-ru p,
+.prose-ru li {
+  color: #343434;
+  font-size: 1rem;
+}
+
+.prose-ru ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.hero-bg {
+  background:
+    linear-gradient(90deg, rgba(20, 27, 17, 0.92) 0%, rgba(38, 49, 31, 0.72) 47%, rgba(38, 49, 31, 0.28) 100%),
+    url("/images/hero-support.jpg") center/cover;
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(200, 169, 106, 0.34);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(200, 169, 106, 0);
+  }
+}
+
+.soft-pulse {
+  animation: softPulse 2.8s ease-in-out infinite;
+}
